@@ -1,0 +1,92 @@
+.line-black{
+  width: 100%;
+  height: 14px;
+  background-color: #eee;
+}
+
+/* 烹饪行程 */
+.cook-item{
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.item-top{
+  width: 100%;
+  padding: 10px 0;
+  margin-left: 5%;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-top-img{
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.item-top-date{
+  margin-right: 6px;
+}
+
+.item-top-week{
+  margin-right: 6px;
+}
+
+.item-bottom{
+  width: 100%;
+  margin: 10px 0 10px 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-bottom-left-img{
+  width: 126px;
+  height: 70px;
+}
+
+.item-bottom-right{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 58%;
+}
+
+.item-bottom-right-name{
+  font-weight: 600;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.item-bottom-right-price{
+  color: red;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.item--exclude{
+  width: 60px;
+  height: 26px;
+  border: 1px solid red;
+  border-radius: 5px;
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+  position: absolute;
+  right: 12px;
+  bottom: 28px;
+}
+
+/* 清空的状态 */
+.del-state{
+  width: 100%;
+  margin: auto;
+}
+
+.del-state-img{
+  width: 120px;
+  height: 120px;
+  margin:100px;
+}

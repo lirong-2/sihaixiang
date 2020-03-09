@@ -1,0 +1,18 @@
+/* 不能少page */
+page,.start{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.start-img{
+  width: 100%;
+  height: 100%;
+}
+
+.start-btn{
+  width: 150px;
+  position: absolute;
+  bottom: 70px;
+  left: 84px;
+}

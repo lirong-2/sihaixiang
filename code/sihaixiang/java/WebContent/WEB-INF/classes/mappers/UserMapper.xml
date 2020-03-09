@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.shx.mapper.UserMapper">
+	<!-- 用户数据的插入（第一次登录） -->
+	<!-- Integer addnew(User user) -->
+	<insert id="addnew" parameterType="cn.itsource.shx.entity.User" useGeneratedKeys="true" keyProperty="id">
+		insert into t_user(
+			open_id,nickname,header_img,
+			telphone,register_time,last_login_time
+		) values(
+			#{openId},#{nickname},#{headerImg},
+			#{telphone},#{registerTime},#{lastLoginTime}
+		)
+	</insert>
+	
+	<!-- 根据微信唯一识别码（openId）查询用户数据 -->
+	<!-- User findByOpenId(String openId) -->
+	<select id="findByOpenId" resultType="cn.itsource.shx.entity.User">
+		select 
+			id,nickname,header_img AS headerImg,
+			telphone,register_time AS registerTime,last_login_time AS lastLoginTime
+		from
+			t_user
+		where
+			open_id=#{openId}
+	</select>
+	
+	<!-- 根据用户数据更新用户数据（非第一次登录） -->
+	<!-- Integer update(User user) -->
+	<update id="update">
+		update
+			t_user
+		set
+			<if test="nickname!=null">nickname=#{nickname},</if>
+			<if test="headerImg!=null">header_img=#{headerImg},</if>
+			<if test="telphone!=null">telphone=#{telphone},</if>
+			last_login_time=#{lastLoginTime}
+		where
+			open_id=#{openId}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!-- 黑线 -->
+<view class="line-black"></view>
+
+<!-- 烹饪行程列表 -->
+<view class="cook-item" wx:if="{{num!=0}}" wx:for="{{cookarr}}">
+  <view class="item-top">
+    <image class="item-top-img" src="/img/22.png"></image>
+    <text class="item-top-date">{{item.date}}</text>
+    <text class="item-top-week">{{item.week}}</text>
+    <text class="item-top-msg">名厨上门</text>
+  </view>
+
+  <view class="item-bottom">
+    <view class="item-bottom-left">
+      <image class="item-bottom-left-img" src="{{item.img}}"></image>
+    </view>
+    <view class="item-bottom-right">
+      <view class="item-bottom-right-name">{{item.name}}</view>
+      <view class="item-bottom-right-price">￥{{item.price}}/桌</view>
+    </view>
+  </view>
+
+  <navigator class="item--exclude" url="/pages/logs/logs">
+      <text class="item-exclude-msg">评价</text>
+  </navigator>
+
+  <!-- 黑线 -->
+  <view class="line-black"></view>
+</view>
+
+<!-- 清空的状态 -->
+<view class="del-state">
+  <image class="del-state-img" src="/img/23.png" wx:if="{{num==0}}"></image>
+</view>

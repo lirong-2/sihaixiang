@@ -1,0 +1,121 @@
+/* 黑线 */
+.line-black{
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+}
+
+/* 头部 */
+.top{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.top-left-img{
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.top-right-img{
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.top-right-name{
+  color: #ccc;
+}
+
+/* 下部列表 */
+
+.bottom-item{
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 2px 2px 4px #ccc;
+  margin-bottom: 20px;
+}
+
+.item-top{
+  width: 100%;
+}
+
+.item-top-img{
+  width: 100%;
+  height: 180px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.item-center{
+  width: 68px;
+  padding: 4px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 10px;
+  top: 140px;
+  text-align: center;
+}
+
+.item-center-img{
+  width: 10px;
+  height: 14px;
+  margin: 0 2px 0 3px;
+}
+
+.item-center-name{
+  color: white;
+}
+
+.item-bottom{
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-bottom-left{
+  margin-left: 10px;
+}
+
+.item-bottom-left-name{
+  font-weight: 600;
+}
+
+.item-bottom-left-price{
+  color: red;
+}
+
+.item-bottom-right{
+  margin-right: 10px;
+  text-align: center;
+}
+
+.item-bottom-right-img{
+  width: 20px;
+  height: 20px;
+}
+
+.item-bottom-right-name{
+  color: #ccc;
+}
+
+/* 清空的状态 */
+.del-state{
+  width: 100%;
+  margin: auto;
+}
+
+.del-state-img{
+  width: 140px;
+  height: 116px;
+  margin:100px;
+}

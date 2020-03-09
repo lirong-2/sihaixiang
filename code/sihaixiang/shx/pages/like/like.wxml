@@ -1,0 +1,42 @@
+<!-- 心愿单 -->
+<view class="line-black"></view>
+
+<!-- 头部 -->
+<view class="top">
+  <view class="top-left">
+    <image class="top-left-img" src="/img/18.png"></image>
+    <text class="top-left-name">已收藏{{num}}个餐宴</text>
+  </view>
+  <view class="top-right" bindtap="del">
+    <image class="top-right-img" src="/img/19.png"></image>
+    <text class="top-right-name">清空</text>
+  </view>
+</view>
+
+<!-- 下部列表 -->
+<view class="bottom-item" wx:if="{{num!=0}}" wx:for="{{list}}">
+  <view class="item-top">
+    <image class="item-top-img" src="{{item.imgUrl}}"></image>
+  </view>
+
+  <view class="item-center">
+    <image class="item-center-img" src="/img/17.png"></image>
+    <text class="item-center-name">{{item.hot}}</text>
+  </view>
+
+  <view class="item-bottom">
+    <view class="item-bottom-left">
+      <view class="item-bottom-left-name">{{item.banquestTitle}}</view>
+      <view class="item-bottom-left-price">￥{{item.price}}/桌</view>
+    </view>
+    <view class="item-bottom-right" bindtap="cancel">
+      <image class="item-bottom-right-img" src="/img/20.png"></image>
+      <view class="item-bottom-right-name">取消收藏</view>
+    </view>
+  </view>
+</view>
+
+<!-- 清空的状态 -->
+<view class="del-state">
+  <image class="del-state-img" src="/img/21.png" wx:if="{{num==0}}"></image>
+</view>

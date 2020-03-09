@@ -1,0 +1,142 @@
+<!-- 头部 -->
+<view class="top">
+  <swiper class="top-swp" indicator-dots="{{indicatoDots}}"  autoplay="{{autoplay}}"
+  interval="{{interval}}" circular="circular">
+    <swiper-item wx:for="{{bannertop}}">
+      <view>
+        <image class="img" src="{{item}}"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <navigator url="/pages/logs/logs" class="top-search">
+    <image class="search-icon" src="/img/3.png"></image>
+    <text class="search-text">搜美食，菜谱</text>
+  </navigator>
+</view>
+
+<!-- 广告位 -->
+<view class="nav">
+  <view class="nav-top">
+    <navigator url="{{item.url}}" class="nav-top-item" wx:for="{{navarr}}">
+      <image class="nav-top-item-img" src="{{item.img}}"></image>
+      <view class="nav-top-item-text">{{item.text}}</view>
+    </navigator>
+  </view>
+  <view class="nav-bottom">
+    <image src="/img/8.png" class="nav-bottom-img"></image>
+  </view>
+</view>
+
+<!-- 分割线 -->
+<view class="line"></view>
+
+<!-- 名厨 -->
+<view class="cook">
+  <view class="cook-top">
+    <image class="cook-top-img" src="/img/9.png"></image>
+  </view>
+  <view class="cook-center">
+    <view class="cook-center-item" wx:for="{{cookarr}}">
+      <view class="cook-center-header">
+        <image class="cook-center-header-img" src="{{item.headerUrl}}"></image>
+      </view>
+      <view class="cook-center-name">{{item.name}}</view>
+
+      <view class="cook-center-star">
+        <image class="cook-center-star-img" wx:if="{{item.star==0}}" src="/img/star.png"></image>
+        <image class="cook-center-star-img cook-center-star-img1" wx:if="{{item.star==1}}" src="/img/star.png"></image>
+        <image class="cook-center-star-img cook-center-star-img2" wx:if="{{item.star==2}}" src="/img/star.png"></image>
+        <image class="cook-center-star-img cook-center-star-img3" wx:if="{{item.star==3}}" src="/img/star.png"></image>
+        <image class="cook-center-star-img cook-center-star-img4" wx:if="{{item.star==4}}" src="/img/star.png"></image>
+        <image class="cook-center-star-img cook-center-star-img5" wx:if="{{item.star==5}}" src="/img/star.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cook-bottom">更多名厨</view>
+</view>
+
+<!-- 分割线 -->
+<view class="line"></view>
+
+<!-- 优选餐宴 -->
+<view class="banquet">
+  <view class="banquet-top">
+    <image class="banquet-top-img" src="/img/10.png"></image>
+  </view>
+
+  <scroll-view scroll-x="true">
+    <view class="banquet-center">
+      <view class="banquet-center-item" wx:for="{{banquetarr}}">
+        <view class="banquet-center-item-top">
+          <image class="banquet-center-item-top-img" src="{{item.imgUrl}}"></image>
+        </view>
+        <view class="banquet-center-item-bottom">
+          <view class="banquet-center-item-bottom-name">{{item.title}}</view>
+          <view class="banquet-center-item-bottom-price">￥{{item.price}}/桌</view>
+        </view>
+      </view>
+    </view> 
+  </scroll-view>
+
+  <view class="banquet-bottom">更多餐宴</view>
+</view>
+
+<!-- 分割线 -->
+<view class="line"></view>
+
+<!-- 认证 -->
+<view class="nav2">
+  <view class="nav2-top">
+    <view class="nav2-left">
+      <image class="nav2-img" src="/img/13.png"></image>
+      <view class="nav2-text">
+        <view class="nav2-text-one">信用保障</view>
+        <view class="nav2-text-two">服务到位，时间准时</view>
+      </view>
+    </view>
+
+    <view class="nav2-right">
+      <image class="nav2-img" src="/img/14.png"></image>
+      <view class="nav2-text">
+        <view class="nav2-text-one">认证服务商</view>
+        <view class="nav2-text-two">厨师实名，服务更可靠</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nav2-center">
+    <view class="nav2-left">
+      <image class="nav2-img" src="/img/15.png"></image>
+      <view class="nav2-text">
+        <view class="nav2-text-one">品质服务</view>
+        <view class="nav2-text-two">知名品牌，星级厨师</view>
+      </view>
+    </view>
+
+    <view class="nav2-right">
+      <image class="nav2-img" src="/img/16.png"></image>
+      <view class="nav2-text">
+        <view class="nav2-text-one">安全保障</view>
+        <view class="nav2-text-two">全平台在线支付</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="link-white"></view>
+
+  <view class="nav2-bottom">
+    <swiper class="nav2-bottom-swp" indicator-dots="{{indicatoDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}">
+      <swiper-item wx:for="{{bannerbuttom}}">
+        <view>
+          <image class="nav2-bottom-swp-img" src="{{item}}"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="link-white"></view>
+</view>
+
+
+

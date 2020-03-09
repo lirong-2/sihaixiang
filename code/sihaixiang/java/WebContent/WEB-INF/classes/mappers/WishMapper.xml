@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.shx.mapper.WishMapper">
+	<!-- 查询心愿单列表 -->
+	<!-- List<Wish> findWishByOpenId() -->
+	<select id="findWishByOpenId" resultType="cn.itsource.shx.entity.Wish">
+		select 
+			id,banquest_id AS banquestId,add_time AS addTime
+		from
+			t_wish
+		where
+			open_id=#{openId}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

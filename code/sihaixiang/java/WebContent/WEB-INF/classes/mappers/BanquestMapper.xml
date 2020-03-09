@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.shx.mapper.BanquestMapper">
+	<!-- 插入餐宴数据 -->
+	<!-- Integer addnew(Banquest banquest) -->
+	<insert id="addnew" parameterType="cn.itsource.shx.entity.Banquest" useGeneratedKeys="true" keyProperty="id">
+		insert into t_banquest(
+			title,`desc`,hot,
+			price,img_id,genre,
+			`status`,create_time,update_time
+		) values(
+			#{title},#{desc},#{hot},
+			#{price},#{imgId},#{genre},
+			#{status},#{createTime},#{updateTime}
+		)
+	</insert>
+	
+	<!-- 查询热度前三的餐宴数据 -->
+	<!-- List<Banquest> findByTopThree() -->
+	<select id="findByTopThree" resultType="cn.itsource.shx.entity.Banquest">
+		select
+			id,title,`desc`,
+			hot,price,img_id AS imgId,
+			genre,`status`,create_time AS createTime,
+			update_time AS updateTime
+		from
+			t_banquest
+		where
+			status=0
+		order by
+			hot desc
+		limit
+			0,3
+	</select>
+	
+	<!-- 根据餐宴id查询餐宴数据 -->
+	<!-- Banquest findById(Integer id) -->
+	<select id="findById" resultType="cn.itsource.shx.entity.Banquest">
+		select 
+			id,title,`desc`,
+			hot,price,img_id AS imgId,
+			genre,`status`,create_time AS createTime,
+			update_time AS updateTime
+		from
+			t_banquest
+		where
+			id=#{id}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

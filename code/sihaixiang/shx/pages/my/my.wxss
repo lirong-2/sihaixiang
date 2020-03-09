@@ -1,0 +1,47 @@
+/* pages/my/my.wxss */
+.top{
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.nickname{
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.msg{
+  margin-top: 4px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.header{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.bottom{
+  padding-top: 14px;
+}
+
+/* 分割线 */
+.bottom-nav{
+  width: 90%;
+  margin: auto;
+  padding: 6px;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-img{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}

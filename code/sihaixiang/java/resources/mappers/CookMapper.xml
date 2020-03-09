@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.shx.mapper.CookMapper">
+	<!-- 插入厨师数据 -->
+	<!-- Integer addnew(Cook cook) -->
+	<insert id="addnew" parameterType="cn.itsource.shx.entity.Cook" useGeneratedKeys="true" keyProperty="id">
+		insert into t_cook(
+			`name`,header_id,star,
+			`desc`,create_time,update_time
+		) values(
+			#{name},#{headerId},#{star},
+			#{desc},#{createTime},#{updateTime}
+		)
+	</insert>
+	
+	<!-- 查询星级前三的厨师数据 -->
+	<!-- List<Cook> findByTopThree() -->
+	<select id="findByTopThree" resultType="cn.itsource.shx.entity.Cook">
+		select 
+			id,`name`,header_id AS headerId,
+			star,`desc`,create_time AS createTime,
+			update_time AS updateTime
+		from
+			t_cook
+		order by
+			star desc
+		limit
+			0,3
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

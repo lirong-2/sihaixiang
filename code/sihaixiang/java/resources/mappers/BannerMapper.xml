@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.shx.mapper.BannerMapper">
+	<!-- 插入轮播图数据 -->
+	<!-- Integer addnew(Banner banner) -->
+	<insert id="addnew" parameterType="cn.itsource.shx.entity.Banner" useGeneratedKeys="true" keyProperty="id">
+		insert into t_banner(
+			`name`,`desc`,`status`,
+			create_time,update_time
+		) values(
+			#{name},#{desc},#{status},
+			#{createTime},#{updateTime}
+		)
+	</insert>
+	
+	<!-- 通过轮播图id获取轮播图数据 -->
+	<!-- Banner findById(Integer id) -->
+	<select id="findById" resultType="cn.itsource.shx.entity.Banner">
+		select
+			id,`name`,`desc`,
+			`status`,create_time AS createTime,update_time AS updateTime
+		from
+			t_banner
+		where
+			id=#{id}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

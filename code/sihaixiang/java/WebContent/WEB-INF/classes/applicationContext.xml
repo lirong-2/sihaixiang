@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 进行包的扫描,去看类上面是否有相应的标签配置 -->
+	<context:component-scan base-package="cn.itsource.shx" />
+	<!-- 这个不是必须的(spring3.2版本前使用) 配上后兼容性好 -->
+	<context:annotation-config />
+	
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<!-- 配置一个DBCP的Bean -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+		destroy-method="close">
+		<!-- 注意：这里我们不是使用的ref引用，而是直接写的value，因此注入的数据是一个变通的值 -->
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+	
+	<!-- MyBatis:MapperScannerConfigurer -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 接口文件在哪里 -->
+		<property name="basePackage" value="cn.itsource.shx.mapper" />
+	</bean>
+	
+	<!-- MyBatis:SqlSessionFactoryBean -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 数据源 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- XML文件在哪里 -->
+		<property name="mapperLocations" value="classpath:mappers/*.xml" />
+	</bean>
+</beans>

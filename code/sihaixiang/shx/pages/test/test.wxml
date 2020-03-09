@@ -1,0 +1,29 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<view>{{message}}</view>
+<view wx:for="{{students}}">
+  <text>{{item}}</text>
+  <text>{{item.name}}</text>
+  <text>{{item.age}}</text>
+</view>
+<!-- 图片标签 -->
+<image src="/img/1.png" class="img"></image>
+<!-- 跳转标签，相当于a标签 -->
+<navigator url="/pages/logs/logs">跳转到日志页面</navigator>
+<!-- 轮播图 -->
+<!-- indicator-dots是否添加小点/默认false -->
+<!-- autoplay是否自动切换/默认false -->
+<!-- duration滑动动画时长/ms -->
+<!-- circular是否衔接/默认false -->
+<swiper indicator-dots="{{indicatoDots}}"  autoplay="{{autoplay}}"
+interval="{{interval}}" circular="circular">
+  <swiper-item>
+    <view class="v1"></view>
+  </swiper-item>
+  <swiper-item>
+    <view class="v2"></view>
+  </swiper-item>
+  <swiper-item>
+    <view class="v3"></view>
+  </swiper-item>
+</swiper>

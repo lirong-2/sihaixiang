@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.shx.mapper.ImgMapper">
+	<!-- 插入图片数据 -->
+	<!-- Integer addnew(Img img) -->
+	<insert id="addnew" parameterType="cn.itsource.shx.entity.Img" useGeneratedKeys="true" keyProperty="id">
+		insert into t_img(
+			img_url,`desc`,genre,
+			upload_time
+		) values(
+			#{imgUrl},#{desc},#{genre},
+			#{uploadTime}
+		)
+	</insert>
+	
+	<!-- 根据轮播图id获取对应所有图片 -->
+	<!-- List<Img> findAllByBannerId(Integer bannerId) -->
+	<select id="findAllByBannerId" resultType="cn.itsource.shx.entity.Img">
+		select
+			i.id,i.img_url AS imgUrl,i.`desc`,
+			i.genre,i.upload_time AS uploadTime
+		from
+			t_img i
+		left join
+			t_banner_img bi
+		on
+			bi.img_id=i.id
+		where 
+			bi.banner_id=#{bannerId}
+	</select>
+	
+	<!-- 根据图片id获取图片数据 -->
+	<!-- Img findById(Integer id) -->
+	<select id="findById" resultType="cn.itsource.shx.entity.Img">
+		select 
+			img_url AS imgUrl,`desc`,genre,
+			upload_time AS uploadTime
+		from
+			t_img
+		where
+			id=#{id}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
